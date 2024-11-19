@@ -541,13 +541,30 @@ section
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: url('images/fundoMenu.jpg') no-repeat center center; /* Adiciona a imagem de fundo */
-	background-size: cover; /* Faz a imagem cobrir toda a área */
 	z-index: 101;
 	visibility: hidden;
 	opacity: 0;
 	padding-bottom: 100px;
-	transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+	overflow: hidden; /* Garante que nada extra seja mostrado */
+  }
+  
+  .menu::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("/thevenue-gh-pages/images/fundoMenu.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0.95; /* Define a opacidade para 80% */
+	z-index: -1; /* Coloca a imagem atrás do conteúdo do menu */
+  }
+  .menu_image {
+	max-width: 100%; /* Ajusta para não ultrapassar a largura do container */
+	height: auto; /* Mantém a proporção da imagem */
+	margin-bottom: 20px; /* Espaço entre a imagem e as opções do menu */
   }
   
 .menu.active
