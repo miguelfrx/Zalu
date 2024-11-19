@@ -535,19 +535,21 @@ section
 4. Menu
 *********************************/
 
-.menu
-{
+.menu {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(180,147,131,0.97);
+	background: url('images/fundoMenu.jpg') no-repeat center center; /* Adiciona a imagem de fundo */
+	background-size: cover; /* Faz a imagem cobrir toda a área */
 	z-index: 101;
 	visibility: hidden;
 	opacity: 0;
 	padding-bottom: 100px;
-}
+	transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  }
+  
 .menu.active
 {
 	visibility: visible;
